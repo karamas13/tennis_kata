@@ -29,7 +29,7 @@ describe ('TennisGame', () => {
         game.scoredPoint("Player2"),game.scoredPoint("Player2"),game.scoredPoint("Player2")
         expect(game.getScore()).toBe("Deuce");
     })
-    it('when p1 scores & p2 are tied 40-40 Deuce should be returned', () => {
+    it('when p1 scores & p2 are tied 40-40 abd Player1 scores Advantage for Player1 should be returned', () => {
         const game = new TennisGame();
         game.scoredPoint("Player1"),game.scoredPoint("Player1"),game.scoredPoint("Player1")
         game.scoredPoint("Player2"),game.scoredPoint("Player2"),game.scoredPoint("Player2")
@@ -37,5 +37,15 @@ describe ('TennisGame', () => {
         game.scoredPoint("Player1")
         
         expect(game.getScore()).toBe("Advantage Player1");
+    })
+    it('when p1 scores while he has the advantage Win Player1 should be returned', () => {
+        const game = new TennisGame();
+        game.scoredPoint("Player1"),game.scoredPoint("Player1"),game.scoredPoint("Player1")
+        game.scoredPoint("Player2"),game.scoredPoint("Player2"),game.scoredPoint("Player2")
+        
+        game.scoredPoint("Player1")
+        game.scoredPoint("Player1")
+        
+        expect(game.getScore()).toBe("Win Player1");
     })
 })

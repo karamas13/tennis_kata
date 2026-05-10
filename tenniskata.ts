@@ -18,8 +18,15 @@ getScore(): string {
      return`${this.scores[this.player1Pts]}-All` 
     }
 
-    if (this.player1Pts === 4) {
-       return "Advantage Player1" 
+    if (this.player1Pts >= 4 || this.player2Pts >= 4) {
+       const scoreDiff = this.player1Pts - this.player2Pts
+       
+       if (scoreDiff === 1) {
+        return "Advantage Player1"
+       }
+       else if (scoreDiff === 2) {
+        return "Win Player1"
+       }
     }
 
     return `${this.scores[this.player1Pts]}-${this.scores[this.player2Pts]}`
