@@ -18,6 +18,10 @@ getScore(): string {
      return`${this.scores[this.player1Pts]}-All` 
     }
 
+    if (this.player1Pts === 4) {
+       return "Advantage Player1" 
+    }
+
     return `${this.scores[this.player1Pts]}-${this.scores[this.player2Pts]}`
  }
 }
