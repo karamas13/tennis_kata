@@ -6,4 +6,9 @@ describe ('TennisGame', () => {
         const game = new TennisGame();
         expect(game.getScore()).toBe("Love-All");
     })
+    it('when p1 scores it should be 15-Love', () => {
+        const game = new TennisGame();
+        game.scoredPoint("Player1")
+        expect(game.getScore()).toBe("15-Love");
+    })
 })
