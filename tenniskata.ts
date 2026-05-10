@@ -23,10 +23,20 @@ getScore(): string {
        
        if (scoreDiff === 1) {
         return "Advantage Player1"
-       }
-       else if (scoreDiff === 2) {
+       } else if (scoreDiff === 2) {
         return "Win Player1"
+       } else if (scoreDiff === -1) {
+        return "Advantage Player2"
+       } else if (scoreDiff === -2) {
+        return "Win Player2"
        }
+       
+    }
+
+    if(this.player1Pts === 4  && this.player1Pts !== this.player2Pts) {
+      return "Win Player1"
+    } else if (this.player2Pts === 4  && this.player1Pts !== this.player2Pts){
+      return "Win Player2" 
     }
 
     return `${this.scores[this.player1Pts]}-${this.scores[this.player2Pts]}`

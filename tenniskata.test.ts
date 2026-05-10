@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { TennisGame } from "./tenniskata.ts";
+import { TennisGame } from "./TennisKata.ts";
 
 describe ('TennisGame', () => {
     it('start of game should be Love-All', () => {
@@ -44,6 +44,13 @@ describe ('TennisGame', () => {
         game.scoredPoint("Player2"),game.scoredPoint("Player2"),game.scoredPoint("Player2")
         
         game.scoredPoint("Player1")
+        game.scoredPoint("Player1")
+        
+        expect(game.getScore()).toBe("Win Player1");
+    })
+    it('when p1 has 4pts and the score is not a deuce Win Player1 should be returned', () => {
+        const game = new TennisGame();
+        game.scoredPoint("Player1"),game.scoredPoint("Player1"),game.scoredPoint("Player1")
         game.scoredPoint("Player1")
         
         expect(game.getScore()).toBe("Win Player1");
