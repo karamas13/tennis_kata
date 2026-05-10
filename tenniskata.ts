@@ -10,6 +10,8 @@ scoredPoint(playerName: string): void {
 getScore(): string {
     if(this.player1Pts === 1) {
         return "15-Love"
+    } else if (this.player1Pts === 2) {
+        return "30-Love"
     }
     return "Love-All"
  }

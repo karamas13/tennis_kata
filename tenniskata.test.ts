@@ -11,4 +11,10 @@ describe ('TennisGame', () => {
         game.scoredPoint("Player1")
         expect(game.getScore()).toBe("15-Love");
     })
+    it('when p1 scores second point the score should be 30-Love', () => {
+        const game = new TennisGame();
+        game.scoredPoint("Player1")
+        game.scoredPoint("Player1")
+        expect(game.getScore()).toBe("30-Love");
+    })
 })
