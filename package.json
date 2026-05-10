@@ -1,0 +1,25 @@
+{
+  "name": "tennis_kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karamas13/tennis_kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/karamas13/tennis_kata/issues"
+  },
+  "homepage": "https://github.com/karamas13/tennis_kata#readme",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
+  }
+}
