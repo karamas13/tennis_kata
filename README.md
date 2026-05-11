@@ -51,6 +51,12 @@ To avoid "spaghetti" code and nested `if-else` blocks, the logic is decoupled in
 ```bash
 # Clone the repository
 git clone https://github.com/karamas13/tennis_kata.git
+
+# Navigate to the directory
+cd tennis_kata
+
+# Install dependencies
+npm install
 ```
 
 ### Running Tests
