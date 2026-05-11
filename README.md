@@ -1,70 +1,74 @@
-Tennis Scoring Kata
-A clean, test-driven implementation of the Tennis Scoring rules, built with TypeScript and Vitest.
+# 🎾 Tennis Scoring Kata
 
-🎾 Project Overview
-This project implements the scoring logic of a tennis game. The goal is to handle the complex transitions of a tennis match, including:
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-Standard scoring (Love, 15, 30, 40)
+A clean, production-grade implementation of the Tennis Scoring rules, built with **TypeScript** and developed using **Test-Driven Development (TDD)** principles.
 
-Tied scores (Love-All, 15-All, etc.)
+---
 
-The Deuce state
+## 📖 Project Overview
 
-Advantage logic
+This project implements the complex scoring logic of a tennis match. The engine handles state transitions beyond simple point counting, ensuring full compliance with official tennis rules.
 
-Win conditions (leading by 2 points after scoring 40)
+### Key Features
+* **Standard Scoring:** Mapping points to `Love`, `15`, `30`, and `40`.
+* **Tie States:** Dynamic handling of `Love-All`, `15-All`, and `30-All`.
+* **The Deuce Trap:** Automatic transition to `Deuce` when players are tied at 40-40 or beyond.
+* **Advantage System:** Logic for `Advantage Player1` and `Advantage Player2`.
+* **Win Conditions:** Detection of match completion (leading by 2 points after reaching 40).
 
-🛠 Tech Stack
-Language: TypeScript (for type safety and clarity)
+---
 
-Test Runner: Vitest (a modern, fast testing framework)
+## 🧪 Engineering Approach
 
-Runtime: Node.js
+### Test-Driven Development (TDD)
+The core of this project is the **Red-Green-Refactor** workflow. Each feature was implemented only after a failing test case was established, ensuring 100% logic coverage.
 
-🧪 Test-Driven Development (TDD)
-The project was developed following the Red-Green-Refactor cycle.
+1.  **🔴 Red:** Defined the requirement with a failing test.
+2.  **🟢 Green:** Implemented the minimal code to satisfy the test.
+3.  **🔵 Refactor:** Optimized the logic and improved readability while maintaining "Green" status.
 
-Red: Wrote a failing test case for a specific tennis rule.
+### Scoring Logic Architecture
+To avoid "spaghetti" code and nested `if-else` blocks, the logic is decoupled into three architectural states:
 
-Green: Implemented the minimum logic required to pass the test.
+| State | Logic |
+| :--- | :--- |
+| **Equality** | Handles identical scores and the transition to `Deuce`. |
+| **End-Game** | Manages `Advantage` and `Win` states via relative point differences. |
+| **Regular Play** | Uses a lookup table to map numerical points to tennis terminology. |
 
-Refactor: Cleaned up the code, optimized lookup tables, and improved readability without breaking functionality.
+---
 
-Scoring Logic Architecture
-Instead of using complex nested if-else statements, the logic is categorized into three distinct states:
+## 🚀 Getting Started
 
-Equality: Handles identical scores and the "Deuce" state.
+### Prerequisites
+* **Node.js** (v18.0.0 or higher)
+* **npm** (comes with Node.js)
 
-End-Game: Handles "Advantage" and "Win" scenarios based on the relative score difference once a player reaches at least 4 points.
-
-Regular Play: Uses a lookup table (Array) to translate numerical points to tennis terminology.
-
-🚀 Getting Started
-
-Prerequisites:
-
- Node.js (v18 or higher recommended)
-
- npm (installed with Node.js)
-
-Installation
-Clone the repository and install the dependencies:
-
+### Installation
+```bash
+# Clone the repository
 git clone https://github.com/karamas13/tennis_kata.git
-npm install
+```
 
-Running Tests
-To verify the logic and see the test suite in action:
-
+### Running Tests
+The project uses Vitest for a lightning-fast developer experience.
+```bash
 # Run tests once
 npm test
 
-# Run tests in watch mode (for development)
+# Run tests in watch mode
 npx vitest
+```
 
-📝 Thought Process & Commits
-The commit history is structured to reflect the step-by-step evolution of the logic. Each commit represents a clear milestone in the TDD process, allowing you to follow the transition from basic scoring to complex advantage/win scenarios.
+## 📝 Thought Process & Commits
+The commit history is a deliberate timeline of the TDD process. Each commit represents a single, atomic step in the scoring logic's evolution. This allows reviewers to follow the architectural decisions from the first "Love-All" test to the final win condition.
 
-📄 License
+## 📄 License
+
 This project is open-source and available under the MIT License.
+
+
 
